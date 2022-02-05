@@ -1,8 +1,3 @@
-@import "./styles/settings.scss";
-@import "./styles/generic.scss";
-@import "./styles/base.scss";
-
-@import "./pages/Home/Home.scss";
-@import "./components/Nav/Nav.scss";
-@import "./components/Layout/Layout.scss";
-@import "./components/Input/Input.scss";
+@import "styles/index";
+@import "components/index";
+@import "pages/index";

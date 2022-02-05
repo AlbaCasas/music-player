@@ -1,0 +1,10 @@
+.empty-state {
+  &__icon {
+    font-size: 72px;
+    color: $gray;
+    margin-bottom: 24px;
+  }
+  &__text {
+    font-size: 32px;
+  }
+}
