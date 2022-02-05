@@ -1,10 +1,10 @@
 import Nav from "../Nav";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, onSearch }) => {
   return (
     <div className="layout">
       <main className="layout__container">
-        <Nav />
+        <Nav onSearch={onSearch} />
         {children}
       </main>
     </div>

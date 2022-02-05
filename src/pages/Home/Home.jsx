@@ -1,9 +1,14 @@
 import EmptyState from "./EmptyState";
+import Results from "./Results/Results";
 
-const Home = () => {
+const Home = ({ results, search }) => {
   return (
     <div className="home">
-      <EmptyState />
+      {results.length === 0 ? (
+        <EmptyState />
+      ) : (
+        <Results results={results} search={search} />
+      )}
     </div>
   );
 };

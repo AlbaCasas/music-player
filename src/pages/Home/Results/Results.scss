@@ -1,0 +1,37 @@
+.results {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__table {
+    width: 100%;
+    font-size: 18px;
+    tr {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+    }
+    th {
+      text-align: center;
+      width: fit-content;
+      color: $gray;
+    }
+
+    td {
+      text-align: center;
+      width: fit-content;
+    }
+
+    .th--clickable {
+      cursor: pointer;
+      color: $primary;
+    }
+    tbody {
+      display: block;
+      height: 500px;
+      overflow-y: auto;
+    }
+  }
+}
