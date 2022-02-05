@@ -1,9 +1,13 @@
+import Home from "./pages/Home";
+
+import Layout from "./components/Layout";
 import "./index.scss";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello world</h1>
-    </div>
+    <Layout>
+      <Home />
+    </Layout>
   );
 }
 

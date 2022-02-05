@@ -1,0 +1,13 @@
+.nav {
+  height: 104px;
+  width: 1024px;
+  background-color: $primary;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  padding: 42px;
+  position: absolute;
+  &__title {
+    font-size: 48px;
+  }
+}
