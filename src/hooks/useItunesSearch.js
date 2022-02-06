@@ -17,7 +17,7 @@ const useItunesSearch = () => {
     }
   };
 
-  return { onSearch, results, searchValue, errorMessage };
+  return { onSearch, results, searchValue, errorMessage, setResults };
 };
 
 export default useItunesSearch;

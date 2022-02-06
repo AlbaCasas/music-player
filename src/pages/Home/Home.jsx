@@ -1,7 +1,7 @@
 import EmptyState from "./EmptyState";
 import Results from "./Results/Results";
 
-const Home = ({ results, search, errorMessage }) => {
+const Home = ({ results, search, errorMessage, setResults }) => {
   return (
     <div className="home">
       {errorMessage ? (
@@ -9,7 +9,7 @@ const Home = ({ results, search, errorMessage }) => {
       ) : results.length === 0 ? (
         <EmptyState />
       ) : (
-        <Results results={results} search={search} />
+        <Results results={results} search={search} setResults={setResults} />
       )}
     </div>
   );
