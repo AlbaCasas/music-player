@@ -7,7 +7,6 @@ function App() {
   const { onSearch, searchValue, results, errorMessage, setResults } =
     useItunesSearch();
 
-  console.log({ results });
   return (
     <Layout onSearch={onSearch}>
       <Home
