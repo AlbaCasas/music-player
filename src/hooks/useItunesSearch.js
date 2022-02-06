@@ -8,7 +8,9 @@ const useItunesSearch = () => {
   const onSearch = async (value) => {
     try {
       setSearchValue(value);
-      const res = await fetch(`https://itunes.apple.com/search?term=${value}`);
+      const res = await fetch(
+        `https://itunes.apple.com/search?term=${value}&entity=song`
+      );
       const data = await res.json();
       setResults(data.results);
       setErrorMessage(null);

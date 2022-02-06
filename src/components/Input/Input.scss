@@ -2,7 +2,7 @@
   display: flex;
   padding: 10px 16px;
   padding-left: 40px;
-  background-color: $primaryDark;
+  background-color: $white;
   border-radius: 100px;
   max-width: 230px;
   justify-content: center;
@@ -12,10 +12,9 @@
     width: 100%;
     border: none;
     outline: none;
-    background-color: $primaryDark;
-    color: $white;
   }
   &__icon {
+    color: $primary;
     position: absolute;
     left: 16px;
     top: 50%;

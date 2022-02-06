@@ -6,9 +6,15 @@ const Results = ({ results, search, setResults }) => {
     toggleSortOrder,
     getResultsSortedByDuration,
     getResultsSortedByPrice,
+    getResultsSortedByGenre,
   } = useResultsSort({
     results,
   });
+
+  const updateResults = (sortedResults) => {
+    setResults(sortedResults);
+    toggleSortOrder();
+  };
 
   return (
     <div className="results">
@@ -22,20 +28,19 @@ const Results = ({ results, search, setResults }) => {
             <th className="cell">Album</th>
             <th
               className="cell cell--clickable"
-              onClick={() => {
-                setResults(getResultsSortedByDuration());
-                toggleSortOrder();
-              }}
+              onClick={() => updateResults(getResultsSortedByDuration())}
             >
               Duration
             </th>
-            <th className="cell cell--clickable">Gender</th>
             <th
               className="cell cell--clickable"
-              onClick={() => {
-                setResults(getResultsSortedByPrice());
-                toggleSortOrder();
-              }}
+              onClick={() => updateResults(getResultsSortedByGenre())}
+            >
+              Genre
+            </th>
+            <th
+              className="cell cell--clickable"
+              onClick={() => updateResults(getResultsSortedByPrice())}
             >
               Price
             </th>

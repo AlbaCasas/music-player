@@ -12,31 +12,40 @@ const useResultsSort = ({ results }) => {
   };
 
   const getResultsSortedByDuration = () => {
-    const sortedResults = results.sort((a, b) => {
+    return results.sort((a, b) => {
       if (sortOrder === "asc") {
         return a.trackTimeMillis - b.trackTimeMillis;
       }
       return b.trackTimeMillis - a.trackTimeMillis;
     });
-
-    return sortedResults;
   };
 
   const getResultsSortedByPrice = () => {
-    const sortedResults = results.sort((a, b) => {
+    return results.sort((a, b) => {
       if (sortOrder === "asc") {
         return a.trackPrice - b.trackPrice;
       }
       return b.trackPrice - a.trackPrice;
     });
+  };
 
-    return sortedResults;
+  const getResultsSortedByGenre = () => {
+    return results.sort((a, b) => {
+      if (a.primaryGenreName < b.primaryGenreName) {
+        return sortOrder === "asc" ? -1 : 1;
+      }
+      if (a.primaryGenreName > b.primaryGenreName) {
+        return sortOrder === "asc" ? 1 : -1;
+      }
+      return 0;
+    });
   };
 
   return {
     toggleSortOrder,
     getResultsSortedByDuration,
     getResultsSortedByPrice,
+    getResultsSortedByGenre,
   };
 };
 

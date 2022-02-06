@@ -2,7 +2,6 @@ import useItunesSearch from "./hooks/useItunesSearch";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import "./index.scss";
-import useResultsSort from "./hooks/useResultsSort";
 
 function App() {
   const { onSearch, searchValue, results, errorMessage, setResults } =
