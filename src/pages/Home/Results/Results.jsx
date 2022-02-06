@@ -1,28 +1,38 @@
+import { formatMillis } from "./utils";
+
 const Results = ({ results, search }) => {
   return (
     <div className="results">
-      <h3>Searching "{search}" </h3>
+      <h3 className="results__title">Searching "{search}" </h3>
       <table className="results__table">
         <thead>
           <tr>
-            <th className="th">Song</th>
-            <th className="th">Artist</th>
-            <th className="th">Album</th>
-            <th className="th th--clickable">Duration</th>
-            <th className="th th--clickable">Gender</th>
-            <th className="th th--clickable">Price</th>
+            <th className="cell cell--image" />
+            <th className="cell cell--song">Song</th>
+            <th className="cell cell--artist">Artist</th>
+            <th className="cell">Album</th>
+            <th className="cell cell--clickable">Duration</th>
+            <th className="cell cell--clickable">Gender</th>
+            <th className="cell cell--clickable">Price</th>
           </tr>
         </thead>
         <tbody>
           {results.map((result) => {
             return (
               <tr>
-                <td>{result.trackName}</td>
-                <td>{result.artistName}</td>
-                <td>{result.collectionName}</td>
-                <td>{result.trackTimeMillis}</td>
-                <td>{result.primaryGenreName}</td>
-                <td>{result.trackPrice}</td>
+                <td className="cell cell--image">
+                  <img src={result.artworkUrl60} alt={result.trackName} />
+                </td>
+                <td className="cell cell--song cell--clickable">
+                  {result.trackName}
+                </td>
+                <td className="cell cell--artist">{result.artistName}</td>
+                <td className="cell">{result.collectionName}</td>
+                <td className="cell">{formatMillis(result.trackTimeMillis)}</td>
+                <td className="cell">{result.primaryGenreName}</td>
+                <td className="cell">
+                  {result.trackPrice && `${result.trackPrice}€`}
+                </td>
               </tr>
             );
           })}
