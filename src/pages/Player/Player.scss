@@ -1,0 +1,10 @@
+@import "./Actions/Actions.scss";
+
+footer {
+  width: 100%;
+  background-color: $lightGray;
+  height: 104px;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
