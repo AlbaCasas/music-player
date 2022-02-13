@@ -1,5 +1,6 @@
 @import "./Actions/Actions.scss";
 @import "./Social/Social.scss";
+@import "./Preview/Preview.scss";
 
 footer {
   width: 100%;
@@ -9,4 +10,11 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 32px;
+}
+
+.player {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
 }

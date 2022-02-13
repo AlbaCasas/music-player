@@ -26,10 +26,10 @@ function App() {
           }
         />
         <Route
-          path="/player"
+          path="/player/:trackId"
           element={
-            <Layout>
-              <Player />
+            <Layout onSearch={onSearch}>
+              <Player results={results} />
             </Layout>
           }
         />

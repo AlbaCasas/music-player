@@ -1,7 +1,13 @@
 import EmptyState from "./EmptyState";
 import Results from "./Results/Results";
 
-const Home = ({ results, search, errorMessage, setResults }) => {
+const Home = ({
+  results,
+  search,
+  errorMessage,
+  setResults,
+  setSelectedResult,
+}) => {
   return (
     <div className="home">
       {errorMessage ? (

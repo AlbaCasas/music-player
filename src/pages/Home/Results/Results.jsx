@@ -1,5 +1,6 @@
 import useResultsSort from "../../../hooks/useResultsSort";
 import { formatMillis } from "./utils";
+import { useNavigate } from "react-router-dom";
 
 const Results = ({ results, search, setResults }) => {
   const {
@@ -15,6 +16,8 @@ const Results = ({ results, search, setResults }) => {
     setResults(sortedResults);
     toggleSortOrder();
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="results">
@@ -49,7 +52,12 @@ const Results = ({ results, search, setResults }) => {
         <tbody>
           {results.map((result) => {
             return (
-              <tr key={result.trackId}>
+              <tr
+                key={result.trackId}
+                onClick={() => {
+                  navigate(`/player/${result.trackId}`);
+                }}
+              >
                 <td className="cell cell--image">
                   <img src={result.artworkUrl60} alt={result.trackName} />
                 </td>
