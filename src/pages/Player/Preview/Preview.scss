@@ -4,4 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  &__image {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 36px;
+    border: 1px solid $white;
+  }
+  &__trackName {
+    margin-bottom: 8px;
+  }
 }

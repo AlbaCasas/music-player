@@ -1,20 +1,21 @@
 import { useParams } from "react-router-dom";
 import Actions from "./Actions/Actions";
-import Preview from "./Preview";
+import Preview from "./Preview/Preview";
 import Social from "./Social/Social";
 
 const Player = ({ results }) => {
-  const { trackId } = useParams();
+  const params = useParams();
   const selectedResult = results.find(
-    (song) => `${song.trackId}` === `${trackId}`
+    (song) => `${song.trackId}` === `${params.trackId}`
   );
+  const audio = new Audio(selectedResult.previewUrl);
 
   return (
     <div className="player">
-      {selectedResult && <Preview selectedResult={selectedResult} />}
+      <Preview selectedResult={selectedResult} />
       <footer>
         <div />
-        <Actions />
+        <Actions audio={audio} />
         <Social />
       </footer>
     </div>

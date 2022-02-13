@@ -1,16 +1,19 @@
 const Preview = ({ selectedResult }) => {
   return (
-    <div className="player-preview">
-      <div>
+    selectedResult && (
+      <div className="player-preview">
         <img
-          src={selectedResult.artworkUrl60}
+          className="player-preview__image"
+          src={selectedResult.artworkUrl100}
           key={selectedResult.trackId}
           alt={selectedResult.trackName}
         />
-        <h1>{selectedResult.trackName}</h1>
+        <h1 className="player-preview__trackName">
+          {selectedResult.trackName}
+        </h1>
         <h2>{selectedResult.artistName}</h2>
       </div>
-    </div>
+    )
   );
 };
 
