@@ -19,7 +19,18 @@ const useItunesSearch = () => {
     }
   };
 
-  return { onSearch, results, searchValue, errorMessage, setResults };
+  const clearResults = () => {
+    setResults([]);
+  };
+
+  return {
+    onSearch,
+    results,
+    searchValue,
+    errorMessage,
+    setResults,
+    clearResults,
+  };
 };
 
 export default useItunesSearch;

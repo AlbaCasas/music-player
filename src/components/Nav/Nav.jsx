@@ -1,11 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import Input from "../Input";
 
-const Nav = ({ onSearch }) => {
+const Nav = ({ onSearch, clearResults }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const onLogoClick = () => {
+    clearResults();
     navigate("/");
   };
   return (

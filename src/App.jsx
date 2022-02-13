@@ -6,16 +6,23 @@ import Player from "./pages/Player";
 import "./index.scss";
 
 function App() {
-  const { onSearch, searchValue, results, errorMessage, setResults } =
-    useItunesSearch();
+  const {
+    onSearch,
+    searchValue,
+    results,
+    errorMessage,
+    setResults,
+    clearResults,
+  } = useItunesSearch();
 
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/"
+          index
           element={
-            <Layout onSearch={onSearch}>
+            <Layout onSearch={onSearch} clearResults={clearResults}>
               <Home
                 results={results}
                 search={searchValue}
@@ -28,7 +35,7 @@ function App() {
         <Route
           path="/player/:trackId"
           element={
-            <Layout onSearch={onSearch}>
+            <Layout onSearch={onSearch} clearResults={clearResults}>
               <Player results={results} />
             </Layout>
           }

@@ -8,9 +8,6 @@ const Player = ({ results }) => {
   const selectedResult = results.find(
     (song) => `${song.trackId}` === `${params.trackId}`
   );
-  const prevResult = results[results.indexOf(selectedResult) - 1];
-
-  const nextResult = results[results.indexOf(selectedResult) + 1];
   const audio = new Audio(selectedResult.previewUrl);
 
   return (
@@ -19,9 +16,9 @@ const Player = ({ results }) => {
       <footer>
         <div />
         <Actions
+          selectedResult={selectedResult}
+          results={results}
           audio={audio}
-          prevResult={prevResult}
-          nextResult={nextResult}
         />
         <Social />
       </footer>
