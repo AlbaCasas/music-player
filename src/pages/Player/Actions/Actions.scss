@@ -11,6 +11,7 @@
     cursor: pointer;
     &--disabled {
       color: $gray;
+      cursor: initial;
     }
     &--main {
       color: $primary;

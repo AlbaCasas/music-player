@@ -4,9 +4,15 @@ import Input from "../Input";
 const Nav = ({ onSearch }) => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const onLogoClick = () => {
+    navigate("/");
+  };
   return (
     <header className="nav">
-      <h1 children="nav__title">Music Player</h1>
+      <h1 onClick={onLogoClick} className="nav__title">
+        Music Player
+      </h1>
       <Input
         onKeyPress={async (event) => {
           if (event.key === "Enter") {
